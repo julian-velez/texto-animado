@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: #131313;
+}
+
+.text{
+    font-family: "poppins";
+    text-transform: uppercase;
+    font-size: 50px;
+    font-weight: bolder;
+    padding:15px 30px ;
+    position: relative;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+.text::before{
+    content:attr(data-text);
+    position:absolute;
+    top: 0;
+    left: 0;
+    padding: inherit;
+    background-color: #227c70;
+    color: #131313;
+    clip-path:polygon(0 0,25% 0,25% 100%,0 100%);
+    animation: slide 1s ease-in-out alternate infinite;
+}
+
+@keyframes slide{
+    to{
+        clip-path:polygon(75% 0,100% 0,100% 100%,75% 100%);
+    }
+}
